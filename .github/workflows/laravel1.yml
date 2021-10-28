@@ -35,13 +35,3 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-
-   
-
-    - name: Slack
-      with:
-        status: ${{ job.status }}
-        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
-      env:
-        SLACK_WEBHOOK_URL: ${{ https://hooks.slack.com/services/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 }} # required
-      if: always() # Pick up events even if the job fails or is canceled.
