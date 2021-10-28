@@ -15,7 +15,10 @@ use App\Http\Controllers\RegisterController;
 |
 */
 // Hola mundo
-Route::post('register', [RegisterController::class, 'registro']);
+Route::group(['middleware' => ['cors']], function () {
+    
+    Route::post('register', [RegisterController::class, 'registro']);
+});
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
