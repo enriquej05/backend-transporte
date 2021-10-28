@@ -37,7 +37,7 @@ jobs:
       run: vendor/bin/phpunit
 
    
-    - uses: 8398a7/action-slack@v3
+
     - name: Slack
       with:
         status: ${{ job.status }}
