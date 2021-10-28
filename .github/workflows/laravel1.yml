@@ -36,8 +36,9 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
 
-    - name: Slack
+   
     - uses: 8398a7/action-slack@v3
+    - name: Slack
       with:
         status: ${{ job.status }}
         fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
