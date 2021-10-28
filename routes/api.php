@@ -14,6 +14,7 @@ use App\Http\Controllers\RegisterController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// Hola mundo
 Route::post('register', [RegisterController::class, 'registro']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
